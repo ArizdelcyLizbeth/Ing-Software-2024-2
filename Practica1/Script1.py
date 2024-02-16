@@ -37,7 +37,7 @@ class Juego:
                 self.jugadorJ2.marcador.puntos = 0
                 self.cambiaSaque()
                 self.sumaJuego(1)
-                if (self.jugadorJ1.marcador.juego + self.jugadorJ2.marcador.juego) % 2 == 1:
+                if ((self.jugadorJ1.marcador.juego + self.jugadorJ2.marcador.juego) % 2 == 0) and (self.jugadorJ1.marcador.juego + self.jugadorJ2.marcador.juego) != 0:
                     print("__________Cambio de cancha__________")
             elif self.jugadorJ2.marcador.puntos == 'adv':
                 self.jugadorJ2.marcador.puntos = 40
@@ -57,7 +57,7 @@ class Juego:
                 self.jugadorJ1.marcador.puntos = 0
                 self.cambiaSaque()
                 self.sumaJuego(2)
-                if (self.jugadorJ1.marcador.juego + self.jugadorJ2.marcador.juego) % 2 == 1:
+                if ((self.jugadorJ1.marcador.juego + self.jugadorJ2.marcador.juego) % 2 == 0) and (self.jugadorJ1.marcador.juego + self.jugadorJ2.marcador.juego) != 0:
                     print("__________Cambio de cancha__________")
             elif self.jugadorJ1.marcador.puntos == 'adv':
                 self.jugadorJ1.marcador.puntos = 40
@@ -118,7 +118,13 @@ if __name__ == "__main__":
 
     while True:
         try:
-            setsAJugarMain = int(input("Ingrese el número de sets a jugar: "))
+            setsAJugarMain = input("Ingrese el número de sets a jugar: ")
+            lista_caracteres = list(setsAJugarMain)
+            for caracter in lista_caracteres:
+                if not caracter.isdigit():
+                    raise ValueError("Solo se aceptan numeros")
+                else:
+                    setsAJugarMain = int(setsAJugarMain)
             if setsAJugarMain % 2 == 0 or setsAJugarMain < 3:
                 raise ValueError("El número de sets debe ser impar y al menos 3")
             juego = Juego(None, jugador1, jugador2, setsAJugarMain, random.randint(1, 2))
@@ -137,7 +143,13 @@ if __name__ == "__main__":
         # Solicitar al usuario que ingrese quién anota
         while True:
             try:
-                jugadorQueAnota = int(input(f"Ingrese el número del jugador que anota (1: {jugador1.nombre}, 2: {jugador2.nombre}): "))
+                jugadorQueAnota = input(f"Ingrese el número del jugador que anota (1: {jugador1.nombre}, 2: {jugador2.nombre}): ")
+                lista_caracteres2 = list(jugadorQueAnota)
+                for caracter2 in lista_caracteres2:
+                    if not caracter2.isdigit():
+                        raise ValueError("Solo se aceptan numeros")
+                    else:
+                        jugadorQueAnota = int(jugadorQueAnota)
                 if jugadorQueAnota not in [1, 2]:
                     raise ValueError("Número de jugador inválido")
                 break

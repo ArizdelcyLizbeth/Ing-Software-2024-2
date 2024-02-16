@@ -1,17 +1,19 @@
 import random
 
+# Definicion de la clase para el marcador de un jugador
 class Marcador:
     def __init__(self, numSet, juego, puntos):
         self.numSet = numSet
         self.juego = juego
         self.puntos = puntos
 
-
+# Definicion de la clase para un jugador
 class Jugador:
     def __init__(self, nombre, marcador):
         self.nombre = nombre
         self.marcador = marcador
 
+# Definicion de la clase para el juego
 class Juego:
     def __init__(self, ganador, jugadorJ1, jugadorJ2, setsAJugar, servidor):
         self.ganador = ganador
@@ -20,12 +22,14 @@ class Juego:
         self.setsAJugar = setsAJugar
         self.servidor = servidor
 
+    # Metodo para cambiar el servidor
     def cambiaSaque(self):
         if self.servidor == 1:
             self.servidor = 2
         else:
             self.servidor = 1
 
+    # Metodo para sumar un punto al marcador del jugador especificado
     def sumaPunto(self, numeroJugador):
         if numeroJugador == 1:
             if self.jugadorJ2.marcador.puntos == 40 and self.jugadorJ1.marcador.puntos == 40:
@@ -68,6 +72,7 @@ class Juego:
             elif self.jugadorJ2.marcador.puntos == 30:
                 self.jugadorJ2.marcador.puntos = 40
 
+    # Metodo para sumar un juego al marcador del jugador especificado
     def sumaJuego(self, numeroJugador):
         if numeroJugador == 1:
             self.jugadorJ1.marcador.juego += 1
@@ -84,6 +89,7 @@ class Juego:
                     self.jugadorJ1.marcador.juego = 0
                     self.sumaSet(2)
 
+    # Metodo para sumar un set al marcador del jugador especificado
     def sumaSet(self, numeroJugador):
         if numeroJugador == 1:
             self.jugadorJ1.marcador.numSet += 1

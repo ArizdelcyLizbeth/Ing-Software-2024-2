@@ -5,8 +5,9 @@ Para activar el entorno virtual, asegúrate de estar en la carpeta 'Ing-Software
 source myvenv/bin/activate
 ```
 
-## Parte 1
+## Parte 2.1
 Dirígete a la carpeta "InteraccionBaseDeDatosUsandoCursores" y ejecuta el siguiente comando en tu terminal:
 ```bash
 python3 pruebas.py
 ```
+## Parte 2.2

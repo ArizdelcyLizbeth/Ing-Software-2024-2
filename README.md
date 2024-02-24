@@ -1,10 +1,7 @@
-# Ingeniería de Software 2024-2
-Repositorio oficial de la materia de Ingenieria de Software de la Facultad de Ciencias de la UNAM del semestre 2024-2
+## Activar el entorno virtual (myvenv):
+Para activar el entorno virtual, asegúrate de estar en la carpeta 'Ing-Software-2024-2' en tu terminal y luego ejecuta el siguiente comando:
 
-## Profesores:
-
-- Francisco Valdes Souto
-- Valeria Garcia Landa
-- Fernando Fong
-- Erick Martínez Piza
-- Rogelio Alcantar Arenas
+```bash
+# Activa el entorno virtual
+source myvenv/bin/activate
+## Parte 1

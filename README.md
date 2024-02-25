@@ -11,3 +11,7 @@ Dirígete a la carpeta "InteraccionBaseDeDatosUsandoCursores" y ejecuta el sigui
 python3 pruebas.py
 ```
 ## Parte 2.2
+Dirígete a la carpeta "UsoFrameworkAlchemy" y ejecuta el siguiente comando en tu terminal:
+```bash
+python3 app.py
+```

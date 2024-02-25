@@ -1,4 +1,4 @@
-#Siguiendo las instrucciones de la Práctica.
+# Siguiendo las instrucciones de la Práctica.
 ## Activar el entorno virtual (myvenv):
 
 Para activar el entorno virtual, asegúrate de estar en la carpeta 'Ing-Software-2024-2' en tu terminal y luego ejecuta el siguiente comando:

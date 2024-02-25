@@ -6,7 +6,7 @@ Base = declarative_base()
 class Usuario(Base):
     __tablename__ = 'usuarios'
 
-    idUsuario = Column(Integer, primary_key=True)  # Cambiar 'id' a 'idUsuario'
+    idUsuario = Column(Integer, primary_key=True)  
     nombre = Column(String)
     apPat = Column(String)
     apMat = Column(String)

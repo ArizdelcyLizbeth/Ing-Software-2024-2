@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Usuarios</title>
+</head>
+<body>
+    <h1>Listado de Usuarios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.idUsuario }}</td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apPat }}</td>
+                <td>{{ usuario.apMat }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>
+                    <!-- Enlaces para modificar y eliminar usuarios -->
+                    <a href="{{ url_for('modify_user_form', id_usuario=usuario.idUsuario) }}">Modificar</a>
+                    <a href="{{ url_for('delete_user', id_usuario=usuario.idUsuario) }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

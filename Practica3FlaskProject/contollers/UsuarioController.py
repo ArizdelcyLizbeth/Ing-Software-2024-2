@@ -3,20 +3,16 @@ from alchemyClasses.Usuarios import Usuarios
 from alchemyClasses.Rentar import Rentar
 from alchemyClasses import db
 
-usuario_blueprint = Blueprint('usuario', __name__, url_prefix='/usuarios')
+usuario_blueprint = Blueprint('usuario', __name__, url_prefix='/usuario')
 
-"""
-Users are managed by their IDs to prevent potential mistakes.
-"""
-
-# Route to view users -> localhost:5001/usuarios/
+# Ruta para ver usuarios -> localhost:5001/usuario/
 @usuario_blueprint.route('/')
 def view_users():
     usuarios = Usuarios.query.all()
     return render_template('usuarios/view_users.html', usuarios=usuarios)
 
-# Route to add a user -> localhost:5001/usuarios/add
-@usuario_blueprint.route('/add', methods=['GET', 'POST'])
+# Ruta para agregar un usuario -> localhost:5001/usuario/agregar
+@usuario_blueprint.route('/agregar', methods=['GET', 'POST'])
 def add_user():
     if request.method == 'GET':
         return render_template('usuarios/add_user.html')
@@ -29,22 +25,22 @@ def add_user():
             email = request.form.get('email')
             superUser = bool(request.form.get('superUser'))
             if not all((nombre, apPat, password, email)):
-                flash('Please fill in all required fields', 'error')
+                flash('Por favor completa todos los campos requeridos', 'error')
                 return redirect(url_for('usuario.add_user'))
             if Usuarios.query.filter_by(email=email).first():
-                flash('An account with this email address already exists', 'error')
+                flash('Ya existe una cuenta con este correo electrónico', 'error')
                 return render_template('usuarios/add_user.html')
             new_user = Usuarios(nombre=nombre, apPat=apPat, apMat=apMat, password=password, email=email, superUser=superUser)
             db.session.add(new_user)
             db.session.commit()
-            flash('User added successfully', 'success')
+            flash('Usuario agregado exitosamente', 'success')
             return redirect(url_for('usuario.view_users'))
         except Exception as e:
-            flash(f'Error adding user: {str(e)}', 'error')
+            flash(f'Error al agregar usuario: {str(e)}', 'error')
             return redirect(url_for('usuario.add_user'))
 
-# Route to modify user -> localhost:5001/usuarios/modify
-@usuario_blueprint.route('/modify', methods=['GET', 'POST'])
+# Ruta para modificar usuario -> localhost:5001/usuario/modificar
+@usuario_blueprint.route('/modificar', methods=['GET', 'POST'])
 def modify_user():
     if request.method == 'POST':
         id_usuario = request.form.get('id_usuario')
@@ -52,24 +48,24 @@ def modify_user():
             id_usuario = int(id_usuario)
             return redirect(url_for('usuario.modify_user_by_id', id=id_usuario))
         except ValueError:
-            flash('Invalid ID, please enter a valid ID', 'error')
+            flash('ID inválido, por favor ingresa un ID válido', 'error')
     return render_template('usuarios/user_id.html')
 
-# Route to modify user by id -> localhost:5001/usuarios/modify/<int:id>
-@usuario_blueprint.route('/modify/<int:id>', methods=['GET', 'POST'])
+# Ruta para modificar usuario por ID -> localhost:5001/usuario/modificar/<int:id>
+@usuario_blueprint.route('/modificar/<int:id>', methods=['GET', 'POST'])
 def modify_user_by_id(id):
     usuario = Usuarios.query.get(id)
     if not usuario:
         return render_template('usuarios/user_not_found.html')
     if request.method == 'GET':
-        return render_template('modify_user.html', usuario=usuario)
+        return render_template('usuarios/modify_user.html', usuario=usuario)
     elif request.method == 'POST':
         new_email = request.form['email']
         old_email = Usuarios.query.filter(
             (Usuarios.email == new_email) & (Usuarios.idUsuario != usuario.idUsuario)).first()
         if old_email:
-            flash('This email address is already in use', 'error')
-            return render_template('modify_user.html', usuario=usuario)
+            flash('Este correo electrónico ya está en uso', 'error')
+            return render_template('usuarios/modify_user.html', usuario=usuario)
         usuario.nombre = request.form['nombre']
         usuario.apPat = request.form['apPat']
         usuario.apMat = request.form['apMat']
@@ -77,18 +73,18 @@ def modify_user_by_id(id):
         usuario.email = new_email
         usuario.superUser = bool(request.form.get('superUser'))
         if not all((usuario.nombre, usuario.apPat, usuario.password, usuario.email)):
-            flash('Please fill in all required fields', 'error')
-            return render_template('modify_user.html', usuario=usuario)
+            flash('Por favor completa todos los campos requeridos', 'error')
+            return render_template('usuarios/modify_user.html', usuario=usuario)
         try:
             db.session.commit()
-            flash('User modified successfully', 'success')
+            flash('Usuario modificado exitosamente', 'success')
             return redirect(url_for('usuario.view_users'))
         except Exception as e:
-            flash(f'Error modifying user: {str(e)}', 'error')
-            return render_template('modify_user.html', usuario=usuario)
+            flash(f'Error al modificar usuario: {str(e)}', 'error')
+            return render_template('usuarios/modify_user.html', usuario=usuario)
 
-# Route to delete user -> localhost:5001/usuarios/delete
-@usuario_blueprint.route('/delete', methods=['GET', 'POST'])
+# Ruta para eliminar usuario -> localhost:5001/usuario/eliminar
+@usuario_blueprint.route('/eliminar', methods=['GET', 'POST'])
 def delete_user():
     if request.method == 'POST':
         id_usuario = request.form.get('id_usuario')
@@ -96,23 +92,23 @@ def delete_user():
             id_usuario = int(id_usuario)
             return redirect(url_for('usuario.delete_user_by_id', id=id_usuario))
         except ValueError:
-            flash('Invalid ID, please enter a valid ID', 'error')
+            flash('ID inválido, por favor ingresa un ID válido', 'error')
     return render_template('usuarios/user_id.html')
 
-# Route to delete user by id -> localhost:5001/usuarios/delete/<int:id>
-@usuario_blueprint.route('/delete/<int:id>', methods=['GET', 'POST'])
+# Ruta para eliminar usuario por ID -> localhost:5001/usuario/eliminar/<int:id>
+@usuario_blueprint.route('/eliminar/<int:id>', methods=['GET', 'POST'])
 def delete_user_by_id(id):
     usuario = Usuarios.query.get(id)
     if not usuario:
         return render_template('usuarios/user_not_found.html')
     rentas = Rentar.query.filter_by(idUsuario=usuario.idUsuario).all()
     if rentas:
-        flash('Cannot delete user as they have associated rentals', 'error')
+        flash('No se puede eliminar el usuario ya que tiene rentas asociadas', 'error')
     else:
         try:
             db.session.delete(usuario)
             db.session.commit()
-            flash('User deleted successfully', 'success')
+            flash('Usuario eliminado exitosamente', 'success')
         except Exception as e:
-            flash(f'Error deleting user: {str(e)}', 'error')
+            flash(f'Error al eliminar usuario: {str(e)}', 'error')
     return redirect(url_for('usuario.view_users'))

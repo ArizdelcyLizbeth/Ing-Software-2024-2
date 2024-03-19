@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clonbuster - Control de Inventario</title>
+    <style>
+        body {
+            background-color: #f8f0f4;
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #ff6b6e;
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: #fcb9bb;
+            padding: 15px 0;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item {
+            margin: 0 25px;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 12px 25px;
+            border-radius: 25px;
+            background-color: #ff6b6e;
+            border: 2px solid #ff0066;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .menu-item:hover {
+            color: #ff0066;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Clonbuster</h1>
+        <p>¡Bienvenido al sistema de gestión de Clonbuster!
+            En Clonbuster, estamos comprometidos a brindarte la mejor experiencia.
+            </p>
+    </header>
+    <main>
+        <section>
+            <h2>Control de Usuarios</h2>
+            <div class="menu-container">
+                <a href="/usuario" class="menu-item">Ver Usuarios</a>
+                <a href="/usuario/agregar" class="menu-item">Agregar Usuario</a>
+                <a href="/usuario/modificar" class="menu-item">Modificar Usuario</a>
+                <a href="/usuario/eliminar" class="menu-item">Eliminar Usuario</a>
+            </div>
+        </section>
+        <section>
+            <h2>Control de Películas</h2>
+            <div class="menu-container">
+                <a href="/pelicula" class="menu-item">Ver Películas</a>
+                <a href="/pelicula/agregar" class="menu-item">Agregar Película</a>
+                <a href="/pelicula/modificar" class="menu-item">Modificar Película</a>
+                <a href="/pelicula/eliminar" class="menu-item">Eliminar Película</a>
+            </div>
+        </section>
+        <section>
+            <h2>Control de Rentas</h2>
+            <div class="menu-container">
+                <a href="/renta" class="menu-item">Ver Rentas</a>
+                <a href="/renta/agregar" class="menu-item">Agregar Renta</a>
+                <a href="/renta/modificar" class="menu-item">Modificar Renta</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

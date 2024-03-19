@@ -5,11 +5,17 @@ from alchemyClasses import db
 
 usuario_blueprint = Blueprint('usuario', __name__, url_prefix='/usuario')
 
+
 # Ruta para ver usuarios -> localhost:5001/usuario/
+
+
 @usuario_blueprint.route('/')
 def view_users():
     usuarios = Usuarios.query.all()
     return render_template('usuarios/view_users.html', usuarios=usuarios)
+
+
+
 
 # Ruta para agregar un usuario -> localhost:5001/usuario/agregar
 @usuario_blueprint.route('/agregar', methods=['GET', 'POST'])

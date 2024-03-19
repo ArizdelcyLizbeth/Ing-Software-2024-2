@@ -18,20 +18,7 @@ app.register_blueprint(renta_blueprint)
 def hello_world():  # put application's code here
     return render_template('index.html')
 
-@app.route('/usuario/agregar', methods=['GET'])
-def add_user_form():
-    return render_template('usuarios/add_user.html')
 
-# Ruta y función para procesar la solicitud de agregar un nuevo usuario
-@app.route('/usuario/agregar', methods=['POST'])
-def add_user():
-    if request.method == 'POST':
-        nombre = request.form['nombre']
-        ap_pat = request.form['ap_pat']
-        ap_mat = request.form['ap_mat']
-        password = request.form['password']
-        email = request.form['email']
-        return redirect(url_for('view_users'))
 
 if __name__ == '__main__':
     app.run()

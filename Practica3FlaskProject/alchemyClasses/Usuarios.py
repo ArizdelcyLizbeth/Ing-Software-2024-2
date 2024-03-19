@@ -14,6 +14,8 @@ class Usuarios(Base):
     profilePicture = Column(LargeBinary)
     superUser = Column(Boolean, default=False)
 
+    
+
     def __init__(self, nombre, apPat, apMat=None, password=None, email=None, superUser=False):
         self.nombre = nombre
         self.apPat = apPat

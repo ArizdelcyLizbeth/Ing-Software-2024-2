@@ -1,48 +1,53 @@
-.cont {
+.home-container {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: calc(17rem + 20px); /* Ajusta el margen izquierdo */
-}
-
-.title {
-    font-size: 3rem; /* Tamaño del título */
-    text-align: center; /* Centra el título horizontalmente */
-    margin-top: 50px; /* Margen superior */
-    margin-left: 0;
-    color: #ff85a2; /* Color rosa */
-}
-
-p {
-    font-size: 20px; /* Tamaño del texto */
-    margin-bottom: 20px; /* Margen inferior */
+    height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+  .content {
     text-align: center;
-    color: #ff85a2; /* Color rosa */
-}
-
-.container {
-    max-width: 800px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-}
-
-img {
-    width: 75%;
-    max-width: 50rem;
-    display: block;
-    margin: 10px auto;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    margin-left: calc(17px + 17rem); /* Ajusta el margen izquierdo */
+  }
+  
+  .title {
+    font-size: 3rem;
+    color: #530909;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .image-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  
+  .image {
     width: 100%;
-    background-color: #ffeded; /* Color de fondo rosado claro */
-    color: #ff85a2; /* Color del texto del footer */
-    padding: 20px 0; /* Relleno del footer */
-}
-
-footer p {
-    background-color: inherit; /* Color de fondo del footer */
-    color: #ff85a2; /* Color del texto del pie de página */
-    font-size: 18px; /* Tamaño del texto del pie de página */
-    margin-right: 10%;
-}
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .explore-button {
+    background-color: #ff4081;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .explore-button:hover {
+    background-color: #d81b60;
+  }
+  

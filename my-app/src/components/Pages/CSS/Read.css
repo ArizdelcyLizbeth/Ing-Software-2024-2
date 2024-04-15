@@ -1,0 +1,21 @@
+table {
+    width: auto;
+    margin-right: auto;
+    margin-left: calc(50% - 17rem);
+    border-collapse: collapse;
+    background-color: #fff1f4; /* Color de fondo rosa claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+th, td {
+    padding: 12px 20px; /* Mayor espacio de relleno */
+    text-align: left;
+    border-bottom: 1px solid #ff85a2; /* Borde inferior rosa */
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: #ff85a2; /* Color rosa para el título */
+}

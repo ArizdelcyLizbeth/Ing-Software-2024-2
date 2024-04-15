@@ -1,0 +1,43 @@
+#sidebar {
+  width: 200px;
+  background-color: #fdd7e4; /* Color de fondo */
+  padding: 20px;
+  float: right; /* Alinear a la derecha */
+}
+
+h1 {
+  color: #530909; /* Color del título */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin-bottom: 20px;
+}
+
+nav ul li a {
+  color: #530909; /* Color de los enlaces */
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #ffb6c1; /* Color de fondo al pasar el ratón */
+}
+
+nav ul li img {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  width: 100px; /* Ancho de las imágenes */
+  height: auto;
+}
+

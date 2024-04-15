@@ -1,0 +1,44 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+label {
+    margin-top: 20px;
+    color: #ff85a2; /* Color rosa */
+}
+
+button {
+    margin-top: 40px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #ff85a2; /* Rosa pastel */
+    border: 1px solid #ff85a2; /* Borde rosa */
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px; /* Mayor espacio de relleno */
+    color: white; /* Texto blanco */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave */
+}
+
+button:hover {
+    background-color: #ff6b9b; /* Rosa más intenso al pasar el ratón */
+    border-color: #ff6b9b; /* Borde rosa más intenso */
+}
+
+input {
+    color: black;
+    padding: 10px; /* Mayor espacio de relleno */
+    border: 1px solid #ff85a2; /* Borde rosa */
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none; /* Eliminar borde al enfocar */
+    border-color: #ff6b9b; /* Cambiar color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(255, 133, 162, 0.5); /* Sombra al enfocar */
+}

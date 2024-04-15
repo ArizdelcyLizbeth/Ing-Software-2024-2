@@ -1,0 +1,8 @@
+.timedout {
+    color: #ff85a2; /* Rosa pastel para el color de texto */
+    background-color: #fff0f6; /* Fondo rosa pastel */
+    border: 2px solid #ff85a2; /* Borde rosa pastel */
+    font-size: 1.1em; /* Tamaño de fuente ligeramente más grande */
+    font-weight: bold; /* Texto en negrita */
+    box-shadow: 0 0 5px rgba(255, 133, 162, 0.5); /* Sombra suave */
+}

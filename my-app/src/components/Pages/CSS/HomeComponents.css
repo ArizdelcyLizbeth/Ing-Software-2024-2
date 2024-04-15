@@ -1,0 +1,42 @@
+.home {
+    margin-left: 17rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ff85a2; /* Color rosa */
+    font-size: 24px; /* Tamaño de fuente */
+}
+
+.home p {
+    margin-bottom: 30px; /* Reduje el margen inferior */
+}
+
+.userImage {
+    width: 200px; /* Tamaño deseado en píxeles */
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); /* Sombra */
+}
+
+.rentImage {
+    width: 120px; /* Tamaño deseado en píxeles */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Alinear en línea y envolver si no caben en la pantalla */
+    justify-content: center; /* Centrar horizontalmente */
+    margin-left: 17rem;
+}
+
+.card {
+    margin: 20px; /* Mayor espacio entre tarjetas */
+    padding: 20px; /* Agregué relleno para hacerlas más visuales */
+    background-color: #d6789e; /* Color de fondo rosa claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease; /* Transición suave al hacer hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al hacer hover */
+}

@@ -1,0 +1,38 @@
+h1 {
+  margin-left: 17rem;
+}
+  
+.card-container {
+  margin-left: 17rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrar las tarjetas horizontalmente */
+}
+  
+.card {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black; /* Cambiado a color negro */
+  border-radius: 5px;
+  width: fit-content; /* Ancho ajustado al contenido */
+  text-align: center;
+}
+
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  color: black; /* Cambiado a color negro */
+  font-size: 20px;
+  padding: 10px 20px; /* Espaciado interno */
+  background-color: #ff85a2; /* Cambiado a color rosado */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.card a:hover {
+  background-color: #ffb3c7; /* Cambiado a un tono más claro de rosado */
+}
+
+.card a.active {
+  background-color: #ffb3c7; /* Cambiado a un tono más claro de rosado */
+}

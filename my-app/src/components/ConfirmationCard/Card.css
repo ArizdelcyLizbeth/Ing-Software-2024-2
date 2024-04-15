@@ -1,0 +1,41 @@
+.confirmation-card {
+  background-color: #FCE4EC; /* Rosa claro */
+  border: 1px solid #F48FB1; /* Rosa medio */
+  border-radius: 5px;
+  padding: 20px;
+  max-width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 47%;
+}
+
+.confirmation-card p {
+  margin-bottom: 10px;
+  background-color: #FCE4EC; /* Rosa claro */
+}
+
+.confirmation-card button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: #F06292; /* Rosa intenso */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.confirmation-card button:hover {
+  background-color: #EC407A; /* Rosa oscuro */
+}
+
+.confirmation-card button:last-child {
+  background-color: #FF8A80; /* Rosa claro */
+}
+
+.confirmation-card button:last-child:hover {
+  background-color: #FF5252; /* Rosa medio */
+}

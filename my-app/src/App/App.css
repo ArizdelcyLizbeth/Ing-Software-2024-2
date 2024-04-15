@@ -1,0 +1,65 @@
+/* Fondo general */
+body {
+  background-color: #fce4ec;
+}
+
+/* Color de texto */
+html, body {
+  color: #ff85a2;
+}
+
+/* Color de fondo al pasar el ratón sobre los elementos de entrada */
+input:hover {
+  background-color: #f8bbd0;
+}
+
+/* Contenedor principal */
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* Estilos para el contenido principal */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* Estilos para los títulos */
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los párrafos */
+p {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para las imágenes */
+img {
+  width: 75%;
+  max-width: 50rem;
+  display: block;
+  margin: 10px auto;
+}
+
+/* Estilos para el footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff85a2;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}

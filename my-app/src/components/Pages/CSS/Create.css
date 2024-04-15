@@ -1,0 +1,50 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 17rem;
+}
+
+label {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ff69b4; /* rosa */
+}
+
+button {
+    margin-top: 40px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #ff69b4; /* rosa */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #12010d; /* blanco */
+    padding: 12px 24px; /* Espaciado interno */
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff1493; /* rosa intenso al hacer hover */
+}
+
+input {
+    color: black;
+    border: 2px solid #ff69b4; /* rosa */
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff1493; /* rosa intenso al hacer foco */
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* sombra rosa al hacer foco */
+}

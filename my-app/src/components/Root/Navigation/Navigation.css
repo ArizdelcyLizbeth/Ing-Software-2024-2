@@ -3,6 +3,8 @@
   background-color: #fdd7e4; /* Color de fondo */
   padding: 20px;
   float: right; /* Alinear a la derecha */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 h1 {
@@ -27,6 +29,7 @@ nav ul li a {
   padding: 10px;
   text-align: center;
   transition: background-color 0.3s;
+  border-radius: 5px; /* Bordes redondeados */
 }
 
 nav ul li a:hover {
@@ -39,5 +42,5 @@ nav ul li img {
   margin-top: 10px;
   width: 100px; /* Ancho de las imágenes */
   height: auto;
+  border-radius: 50%; /* Forma redondeada */
 }
-
